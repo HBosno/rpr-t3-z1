@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr;
 
 /**
- * Hello world!
+ * Aplikacija "ETF Telefonski imenik"
  *
  */
 public class App 
