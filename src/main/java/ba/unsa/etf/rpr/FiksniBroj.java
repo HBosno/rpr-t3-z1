@@ -12,40 +12,39 @@ enum Grad{SARAJEVO, ZENICA, TRAVNIK, TUZLA, ORASJE, LIVNO, MOSTAR, BIHAC, GORAZD
 public class FiksniBroj extends TelefonskiBroj{
     private String broj;
     private String pozivniBroj;
+
+    private Grad grad;
+
+    public Grad getGrad(){
+        return this.grad;
+    }
+
     FiksniBroj(Grad grad, String broj){
         this.broj=broj;
-        if(grad.equals(Grad.SARAJEVO)){
-            pozivniBroj="033";
-        }
-        else if(grad.equals(Grad.ZENICA)){
-            pozivniBroj="032";
-        }
-        else if(grad.equals(Grad.TRAVNIK)){
-            pozivniBroj="030";
-        }
-        else if(grad.equals(Grad.TUZLA)){
-            pozivniBroj="035";
-        }
-        else if(grad.equals(Grad.ORASJE)){
-            pozivniBroj="031";
-        }
-        else if(grad.equals(Grad.LIVNO)){
-            pozivniBroj="034";
-        }
-        else if(grad.equals(Grad.MOSTAR)){
-            pozivniBroj="036";
-        }
-        else if(grad.equals(Grad.BIHAC)){
-            pozivniBroj="037";
-        }
-        else if(grad.equals(Grad.GORAZDE)){
-            pozivniBroj="038";
-        }
-        else if(grad.equals(Grad.SIROKI_BRIJEG)){
-            pozivniBroj="039";
-        }
-        else if(grad.equals(Grad.BRCKO)){
-            pozivniBroj="049";
+        this.grad=grad;
+        switch(grad) {
+            case SARAJEVO:
+                pozivniBroj="033";
+            case ZENICA:
+                pozivniBroj="032";
+            case TRAVNIK:
+                pozivniBroj="030";
+            case TUZLA:
+                pozivniBroj="035";
+            case ORASJE:
+                pozivniBroj="031";
+            case LIVNO:
+                pozivniBroj="034";
+            case MOSTAR:
+                pozivniBroj="036";
+            case BIHAC:
+                pozivniBroj="037";
+            case GORAZDE:
+                pozivniBroj="038";
+            case SIROKI_BRIJEG:
+                pozivniBroj="039";
+            case BRCKO:
+                pozivniBroj="049";
         }
     }
     @Override
@@ -54,5 +53,9 @@ public class FiksniBroj extends TelefonskiBroj{
         sb.append("/");
         sb.append(broj);
         return sb.toString();
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(broj, pozivniBroj);
     }
 }

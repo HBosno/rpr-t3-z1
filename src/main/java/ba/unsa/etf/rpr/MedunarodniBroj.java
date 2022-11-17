@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr;
 
+import java.util.Objects;
+
 /**
  * One of the classes inheriting the abstract TelefonskiBroj class.
  * Allows for the registration of international telephone numbers corresponding to different countries.
@@ -16,5 +18,9 @@ public class MedunarodniBroj extends TelefonskiBroj{
     @Override
     public String ispisi(){
         return broj;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(broj);
     }
 }

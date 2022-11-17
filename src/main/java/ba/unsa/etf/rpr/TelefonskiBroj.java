@@ -10,11 +10,8 @@ import java.util.Objects;
 
 */
 
-abstract public class TelefonskiBroj {
-    private String ime;
+public abstract class TelefonskiBroj {
     public abstract String ispisi();
     @Override
-    public int hashCode() {
-        return Objects.hash();
-    }
+    public abstract int hashCode();
 }
