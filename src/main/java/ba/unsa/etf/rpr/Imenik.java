@@ -72,4 +72,16 @@ public class Imenik {
         }
         return spisak;
     }
+
+    @Override
+    public String toString(){
+        int i = 1;
+        StringBuilder builder = new StringBuilder();
+        for (Map.Entry<String, TelefonskiBroj> entry : this.brojevi.entrySet()) {
+            builder.append(i).append(". ").append(entry.getKey()).append(" - ").append(entry.getValue().ispisi())
+                    .append(System.lineSeparator());
+            i++;
+        }
+        return builder.toString();
+    }
 }
